@@ -1,0 +1,116 @@
+{% extends 'storegp/main.html' %}
+{% load static %}
+{% block content %}
+
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		  <ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		  </ol>
+
+
+		  <div class="carousel-inner">
+			<div class="carousel-item active">
+			  <img class="d-block w-100"  src="static/images/t1.jfif" alt="First slide">
+			</div>
+			<div class="carousel-item">
+			  <img class="d-block w-100"  src="static/images/t2.jfif" alt="Second slide">
+			</div>
+			<div class="carousel-item">
+			  <img class="d-block w-100"  src="static/images/t3.jfif" alt="Third slide">
+			</div>
+		  </div>
+		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		  </a>
+		</div>
+
+<div style="  background-color: while ; width: 1300px; height: 40px; ; text-align: center"></div>
+
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{ product.imageURL }}">
+			<div class="box-element product">
+				<h6><strong> {{product.name}} </strong></h6>
+				<hr>
+				<button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				<a class="btn btn-outline-success " href="{% url 'viewpro' %}">View</a>
+				<h4 style="display: inline-block; float: right"><strong> {{product.price}} </strong></h4>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+<div style="  background-color: while ; width: 1300px; height: 40px; ; text-align: center"></div>
+ <section>
+        <div class="container">
+            <div class="row">
+				<div class="col-md-6 align-self-center text-center text-md-left">
+                    <div class="content">
+                        <h2> Giàn phơi thông minh </h2>
+                        <p> Vấn đề thiếu diện tích không còn là nỗi lo đói với chung cư hoặc căn hộ của bạn .
+                        Giàn phơi thông minh giúp tiết kiệm không gian phơi đồ, chi phí thấp thời gian sử dụng dài
+                        Bảo hành hai năm .</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center mb-5 mb-lg-0">
+                    <img width="50%" src="static/images/d2.jfif" alt="Hình ảnh không tồn tại">
+                </div>
+            </div>
+        </div>
+    </section>
+<div style="  background-color: while ; width: 1300px; height: 40px; ; text-align: center"></div>
+<section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center mb-5 mb-lg-0">
+                    <img width="50%" src="static/images/d1.jpg" alt="Hình ảnh không tồn tại">
+                </div>
+                <div class="col-md-6 align-self-center text-center text-md-left">
+                    <div class="content">
+                        <h2> Giàn phơi điện cao cấp </h2>
+                        <p> Tiện ích là tất cả những gì sảm phẩm chúng tôi đem lại .
+                            Giàn phơi điền tích hợp đèn chiếu sáng ,đèn sưởi và quạt hong gió .
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<div style="  background-color: while ; width: 1300px; height: 40px; ; text-align: center"></div>
+<center >
+		<hr>
+</center>
+<center>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50106.60198386998!2d105.79539397167623!3d21.02486320420883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453546b56f95b%3A0xa2f4c156a4cf98b0!2zOTctODkgTeG7hSBUcsOsIFRoxrDhu6NuZywgTeG7hSBUcsOsLCBU4burIExpw6ptLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1639228429199!5m2!1svi!2s" width="1300" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</center>
+<div style="  background-color: while ; width: 1300px; height: 40px; ; text-align: center"></div>
+
+ <div class="container p-4 pb-0">
+       <div class="container p-4">
+    <section class="">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9">
+            <iframe
+              class="shadow-1-strong rounded"
+              src="https://www.youtube.com/embed/vlDzYIIOYmM"
+              title="YouTube video"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Iframe -->
+  </div>
+ </div>
+
+{% endblock content %}

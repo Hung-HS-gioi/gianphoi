@@ -1,0 +1,49 @@
+{% extends 'storegp/main.html' %}
+{% load static %}
+{% block content %}
+<div style="  background-color: while ; width: 1300px; height: 200px; ; text-align: center"></div>
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <center>
+        <h2> Đăng kí ngay ...! </h2>
+        <table>
+            <tr>
+                <th>
+                    <p> User Name </p>
+                </th>
+                <td>
+                    {{ context.username }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <p> Email </p>
+                </th>
+                <td>
+                    {{ context.email }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <p> Password </p>
+                </th>
+                <td>
+                    {{ context.password }}
+                </td>
+            </tr>
+             <tr>
+                 <th>
+                     <a  class="btn btn-outline-dark" href="{% url 'store' %}">Come Back Home</a>
+                </th>
+                  <th>
+                    <button style="font-size: 22px;cursor: pointer;">
+                        Save Account Now
+                    </button>
+                </th>
+            </tr>
+        </table>
+    </center>
+</form>
+<div style="  background-color: while ; width: 1300px; height: 250px; ; text-align: center"></div>
+
+{% endblock content %}
